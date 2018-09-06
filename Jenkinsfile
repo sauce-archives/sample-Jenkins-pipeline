@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Run Static Code Analysis') {
             steps {
-	        echo "passed'
+	        echo "passed"
             }
         }
         stage('Run Unit Tests') {
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Run Functional Tests') {
             steps {
-                echo "passed"}
+                echo "passed"
             }
         }
     }
