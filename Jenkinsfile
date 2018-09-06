@@ -2,24 +2,26 @@ pipeline {
     agent any
 
     stages {
-        stage('Run Static Code Analysis') {
+        stage('Build Application') {
             steps {
-	        echo "trial again"
+                sh "npm install"
             }
         }
         stage('Run Unit Tests') {
             steps {
-	    	  echo "trial"
+                sh "npm test"
             }
         }
         stage('Deploy Application') {
             steps {
-            	echo "trial"
+            	sh "npm start &"
             }
         }
         stage('Run Functional Tests') {
             steps {
-                echo "trial"
+                sauce('e16593fe-6899-463b-9595-e5ba5eb46563') {
+                    sh "npm run test-wdio"
+                }
             }
         }
     }
