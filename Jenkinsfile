@@ -4,22 +4,22 @@ pipeline {
     stages {
         stage('Run Static Code Analysis') {
             steps {
-	        echo "passed"
+	        echo "trial again"
             }
         }
         stage('Run Unit Tests') {
             steps {
-	    	  echo "passed"
+	    	  echo "trial"
             }
         }
         stage('Deploy Application') {
             steps {
-            	echo "passed"
+            	echo "trial"
             }
         }
         stage('Run Functional Tests') {
             steps {
-                echo "passed"
+                echo "trial"
             }
         }
     }
