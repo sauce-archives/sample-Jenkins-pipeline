@@ -10,7 +10,6 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
 	    	  echo "trial"
-            	   }
             }
         }
         stage('Deploy Application') {
