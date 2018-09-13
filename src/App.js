@@ -85,12 +85,12 @@ class Calculator extends React.Component {
     return (
       <div>
         <TemperatureInput
-          scale="f"
+          scale="c"
           temperature={celsius}
           onTemperatureChange={this.handleCelsiusChange} />
         <TemperatureInput
           scale="f"
-          temperature={fahrenheit}
+          temperature={celcius}
           onTemperatureChange={this.handleFahrenheitChange} />
           <hr/>
           <TemperatureMessage celsius={celsius} fahrenheit={fahrenheit} />
