@@ -6,6 +6,10 @@ class TemperatureCalculations {
  toFahrenheit(celsius) {
     return (celsius * 9 / 5) + 32;
   }
+
+ toKelvin(celsius) {
+     return (celsius - 273);
+ }
   
  tryConvert(temperature, convert) {
     const input = parseFloat(temperature);
