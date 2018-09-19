@@ -6,8 +6,7 @@ import TemperatureCalculations from './Calculations';
 
 const scaleNames = {
   c: 'Celsius',
-  f: 'Fahrenheit',
-  k: 'Kelvin'
+  f: 'Fahrenheit'
 };
 
 class TemperatureInput extends React.Component {
@@ -42,9 +41,8 @@ class TemperatureMessage extends React.Component {
   render() {
     const celsius = this.props.celsius;
     const fahrenheit = this.props.fahrenheit;
-    const kelvin = this.props.kelvin;
     
-    if (!celsius || !fahrenheit || !kelvin) {
+    if (!celsius || !fahrenheit) {
       return (
         <div className="temperatureMesssage"> 
           <h2>Watiting for input...</h2>
@@ -55,10 +53,6 @@ class TemperatureMessage extends React.Component {
     return (
       <div className="temperatureMesssage">
         <h2>{celsius} Celsius is {fahrenheit} Farhenheit</h2>
-      </div>
-      <br/>
-      <div className="temperatureMesssage">
-      <h2>{celsius} Celsius is {kelvin} Kelvin</h2>
       </div>);
   };
 }
@@ -69,7 +63,6 @@ class Calculator extends React.Component {
     super(props);
     this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
     this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
-    this.handleKelvinChange = this.handleKelvinChange.bind(this);
     this.state = {temperature: '', scale: 'c'};
   }
 
@@ -79,10 +72,6 @@ class Calculator extends React.Component {
 
   handleFahrenheitChange(temperature) {
     this.setState({scale: 'f', temperature});
-  }
-
-  handleKelvinChange(temperature) {
-    this.setState({scale: 'k', temperature});
   }
 
   render() {
@@ -105,12 +94,6 @@ class Calculator extends React.Component {
           onTemperatureChange={this.handleFahrenheitChange} />
           <hr/>
           <TemperatureMessage celsius={celsius} fahrenheit={fahrenheit} />
-        <TemperatureInput
-          scale="k"
-          temperature={kelvin}
-          onTemperatureChange={this.handleKelvinChange} />
-          <hr/>
-          <TemperatureMessage celsius={celsius} fahrenheit={kelvin} />
       </div>
     );
   }
