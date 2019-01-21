@@ -3,7 +3,7 @@ const assert = require('assert');
 describe("Basic App Functionality", () => {
 
     it('should show fizz', () => {
-        browser.get('/index.html');
+        browser.url('/index.html');
 
         title = browser.getTitle();
 
