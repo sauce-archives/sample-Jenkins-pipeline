@@ -4,11 +4,6 @@ import './App.css';
 import FizzBuzzCalculations from './Calculations';
 
 
-const scaleNames = {
-  c: 'Celsius',
-  f: 'Fahrenheit'
-};
-
 class FizzBuzzInput extends React.Component {
   constructor(props) {
     super(props);
@@ -20,12 +15,11 @@ class FizzBuzzInput extends React.Component {
   }
 
   render() {
-    const className = "myClass";
     const valueIn = this.props.valueIn;
     return (
       <fieldset>
         <legend>Enter input value :</legend>
-        <input className={className} value={valueIn}
+        <input className="fizzbuzzinput" value={valueIn}
                onChange={this.handleChange} />
       </fieldset>
     );
@@ -39,6 +33,7 @@ class FizzBuzzMessage extends React.Component {
 
   render() {
     const valueIn = this.props.value;
+    const valueOut = this.props.valueOut
 
     if (!valueIn) {
       return (
@@ -50,7 +45,7 @@ class FizzBuzzMessage extends React.Component {
     
     return (
       <div className="fizzBuzzMessage">
-        <h2>{valueIn}</h2>
+        <h2>Result: {valueOut}</h2>
       </div>);
   };
 }
@@ -59,18 +54,23 @@ class FizzBuzzMessage extends React.Component {
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
+    this.handleFizzBuzzChange = this.handleFizzBuzzChange.bind(this);
+    this.state = {valueIn: 1};
   }
 
-  handleFizzBuzzChange() {
-
+  handleFizzBuzzChange(value) {
+    this.state.valueIn = value;
   }
 
   render() {
     const calc = new FizzBuzzCalculations();
 
+    const input = this.state.valueIn;
+    const output = calc.getValue(input)
+
     return (
       <div>
-        <FizzBuzzInput
+        <FizzBuzzInput valueOut={output}
           onValueChange={this.handleFizzBuzzChange} />
           <hr/>
         <FizzBuzzMessage />

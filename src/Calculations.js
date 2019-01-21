@@ -32,7 +32,7 @@ class FizzBuzzCalculations {
       return "Fizz"
     }
     else {
-      return 'Invalid input';
+      return '';
     }
   }
 
