@@ -18,8 +18,8 @@ class FizzBuzzInput extends React.Component {
     const valueIn = this.props.valueIn;
     return (
       <fieldset>
-        <legend>Enter input value :</legend>
-        <input className="fizzbuzzinput" value={valueIn}
+        <legend>Enter input value:</legend>
+        <input className="fizzbuzzinput" valueIn={valueIn}
                onChange={this.handleChange} />
       </fieldset>
     );
@@ -27,12 +27,9 @@ class FizzBuzzInput extends React.Component {
 }
 
 class FizzBuzzMessage extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
+  
   render() {
-    const valueIn = this.props.value;
+    const valueIn = this.props.valueIn;
     const valueOut = this.props.valueOut
 
     if (!valueIn) {
@@ -59,7 +56,7 @@ class Calculator extends React.Component {
   }
 
   handleFizzBuzzChange(value) {
-    this.state.valueIn = value;
+    this.setState({valueIn: value})
   }
 
   render() {
@@ -70,10 +67,10 @@ class Calculator extends React.Component {
 
     return (
       <div>
-        <FizzBuzzInput valueOut={output}
+        <FizzBuzzInput valueIn={input}
           onValueChange={this.handleFizzBuzzChange} />
           <hr/>
-        <FizzBuzzMessage />
+        <FizzBuzzMessage valueOut={output}/>
       </div>
     );
   }
