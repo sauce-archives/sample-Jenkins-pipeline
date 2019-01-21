@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TemperatureCalculations from './Calculations';
+import FizzBuzzCalculations from './Calculations';
 
 
 const scaleNames = {
@@ -9,50 +9,48 @@ const scaleNames = {
   f: 'Fahrenheit'
 };
 
-class TemperatureInput extends React.Component {
+class FizzBuzzInput extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    this.props.onTemperatureChange(e.target.value);
+    this.props.onValueChange(e.target.value);
   }
 
   render() {
-    const temperature = this.props.temperature;
-    const scale = this.props.scale;
-    const className = "scale-type-" + scale;
+    const className = "myClass";
+    const valueIn = this.props.valueIn;
     return (
       <fieldset>
-        <legend>Enter temperature in {scaleNames[scale]}:</legend>
-        <input className={className} value={temperature}
+        <legend>Enter input value :</legend>
+        <input className={className} value={valueIn}
                onChange={this.handleChange} />
       </fieldset>
     );
   }
 }
 
-class TemperatureMessage extends React.Component {
+class FizzBuzzMessage extends React.Component {
   constructor(props){
     super(props);
   }
 
   render() {
-    const celsius = this.props.celsius;
-    const fahrenheit = this.props.fahrenheit;
-    
-    if (!celsius || !fahrenheit) {
+    const valueIn = this.props.value;
+
+    if (!valueIn) {
       return (
-        <div className="temperatureMesssage"> 
-          <h2>Watiting for input...</h2>
+        <div className="fizzBuzzMessage"> 
+          <h2>Waiting for input...</h2>
         </div>
       );
     }
     
     return (
-      <div className="temperatureMesssage">
-        <h2>{celsius} Celsius is {fahrenheit} Farhenheit</h2>
+      <div className="fizzBuzzMessage">
+        <h2>{valueIn}</h2>
       </div>);
   };
 }
@@ -61,39 +59,21 @@ class TemperatureMessage extends React.Component {
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
-    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
-    this.state = {temperature: '', scale: 'c'};
   }
 
-  handleCelsiusChange(temperature) {
-    this.setState({scale: 'c', temperature});
-  }
+  handleFizzBuzzChange() {
 
-  handleFahrenheitChange(temperature) {
-    this.setState({scale: 'f', temperature});
   }
 
   render() {
-    const calc = new TemperatureCalculations();
-
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
-    const celsius = scale === 'f' ? calc.tryConvert(temperature, calc.toCelsius) : temperature;
-    const fahrenheit = scale === 'c' ? calc.tryConvert(temperature, calc.toFahrenheit) : temperature;
+    const calc = new FizzBuzzCalculations();
 
     return (
       <div>
-        <TemperatureInput
-          scale="c"
-          temperature={celsius}
-          onTemperatureChange={this.handleCelsiusChange} />
-        <TemperatureInput
-          scale="f"
-          temperature={fahrenheit}
-          onTemperatureChange={this.handleFahrenheitChange} />
+        <FizzBuzzInput
+          onValueChange={this.handleFizzBuzzChange} />
           <hr/>
-          <TemperatureMessage celsius={celsius} fahrenheit={fahrenheit} />
+        <FizzBuzzMessage />
       </div>
     );
   }
@@ -106,12 +86,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Celcius to Farhenheit Calculator!</h1>
+          <h1 className="App-title">The FizzBuzz Challenge!</h1>
         </header>
         
         <div className="App-form">
-          {/* <Convert />
-          <ShowFarenheit value="0" /> */}
           <Calculator />
         </div>
       </div>

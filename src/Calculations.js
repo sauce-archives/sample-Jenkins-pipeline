@@ -19,4 +19,23 @@ class TemperatureCalculations {
    
 }
 
-export default TemperatureCalculations;
+class FizzBuzzCalculations {
+
+  getValue(input) {
+    if (input % 3 && input % 5 ) {
+      return "FizzBuzz";
+    }
+    else if (input % 5) {
+      return "Buzz";
+    }
+    else if (input % 3) {
+      return "Fizz"
+    }
+    else {
+      return 'Invalid input';
+    }
+  }
+
+}
+
+export default FizzBuzzCalculations;
