@@ -29,10 +29,9 @@ class FizzBuzzInput extends React.Component {
 class FizzBuzzMessage extends React.Component {
   
   render() {
-    const valueIn = this.props.valueIn;
     const valueOut = this.props.valueOut
 
-    if (!valueIn) {
+    if (!valueOut) {
       return (
         <div className="fizzBuzzMessage"> 
           <h2>Waiting for input...</h2>
