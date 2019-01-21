@@ -1,22 +1,30 @@
-class TemperatureCalculations {
- toCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
-  }
-  
- toFahrenheit(celsius) {
-    return (celsius * 9 / 5) + 32;
-  }
-  
- tryConvert(temperature, convert) {
-    const input = parseFloat(temperature);
-    if (Number.isNaN(input)) {
+class FizzBuzzCalculations {
+
+  getFizzBuzz(int_value){
+    if ((int_value % 3 === 0) && (int_value % 5 === 0)) {
+      return "FizzBuzz";
+    }
+    else if (int_value % 5 === 0) {
+      return "Buzz";
+    }
+    else if (int_value % 3 === 0) {
+      return "Fizz"
+    }
+    else {
       return '';
     }
-    const output = convert(input);
-    const rounded = Math.round(output * 1000) / 1000;
-    return rounded.toString();
   }
-   
+
+  isInRange(int_value) {
+    return ((int_value > 0) && (int_value < 101))
+  }
+
+  getValue(input) {
+    const value = parseInt(input, 10);
+    if (Number.isInteger(value) && this.isInRange(value)) { return this.getFizzBuzz(value) }
+    else { return "Error, invalid input" }
+  }
+
 }
 
-export default TemperatureCalculations;
+export default FizzBuzzCalculations;
