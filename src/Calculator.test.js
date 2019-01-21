@@ -1,21 +1,30 @@
-import TemperatureCalculations from "./Calculations"
+import FizzBuzzCalculations from "./Calculations"
 
 const assert = require('assert');
 
-it('calculates Celsius correctly', () => {
-  const calc = new TemperatureCalculations;
+it('calculates Fizz correctly', () => {
+  const calc = new FizzBuzzCalculations;
 
-  const expectedF = 32
-  const actualF = calc.toFahrenheit(0);
+  const expected = "Fizz"
+  const actual = calc.getValue(3);
 
-  assert.equal(actualF, expectedF);
+  assert.equal(actual, expected);
 });
 
-it('calculates Celsius correctly', () => {
-  const calc = new TemperatureCalculations;
+it('calculates Buzz correctly', () => {
+  const calc = new FizzBuzzCalculations;
 
-  const expectedC = 100
-  const actualC = calc.toCelsius(212);
+  const expected = "Buzz"
+  const actual = calc.getValue(5)
 
-  assert.equal(actualC, expectedC);
+  assert.equal(actual, expected);
 });
+
+it('calculates FizzBuzz correctly', () => {
+  const calc = new FizzBuzzCalculations;
+
+  const expected = "FizzBuzz"
+  const actual = calc.getValue(15)
+
+  assert.equal(actual, expected);
+})
