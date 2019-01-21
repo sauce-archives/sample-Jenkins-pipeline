@@ -7,6 +7,6 @@ describe("Basic App Functionality", () => {
 
         title = browser.getTitle();
 
-        assert.equal(title, "React App");
+        assert.equal(title, "FizzBuzz Challenge");
     });
 });
