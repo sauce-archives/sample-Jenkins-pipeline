@@ -41,7 +41,7 @@ class FizzBuzzMessage extends React.Component {
     
     return (
       <div className="fizzBuzzMessage">
-        <h2>Result: {valueOut}</h2>
+        <h2>{valueOut}</h2>
       </div>);
   };
 }
