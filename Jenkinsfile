@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
+                sh '. /home/jenkins/.profile'
                 sh "npm install"
             }
         }
