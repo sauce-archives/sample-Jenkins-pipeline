@@ -22,6 +22,7 @@ pipeline {
                 sauce('496fc4d5-5eac-43f3-813d-dc31708a20be') {
                     nodejs("11.9") { sh "npm run test-wdio" }
                 }
+            }
         }
     }
 }
