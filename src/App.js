@@ -34,9 +34,6 @@ class TemperatureInput extends React.Component {
 }
 
 class TemperatureMessage extends React.Component {
-  constructor(props){
-    super(props);
-  }
 
   render() {
     const celsius = this.props.celsius;
