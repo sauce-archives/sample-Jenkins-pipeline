@@ -4,7 +4,7 @@ describe('Temperature converter', () => {
     it('should have the correct title', () => {
         browser.url('/');
         
-        const actualTitle = browser.getText(".App-title");
+        const actualTitle = $(".App-title").getText();
         const expectedTitle = "Welcome to Celcius to Farhenheit Calculator!"
 
         assert.equal(actualTitle, expectedTitle);
@@ -13,13 +13,13 @@ describe('Temperature converter', () => {
     it('should have the logo', () => {
         browser.url('/');
 
-        assert.equal(browser.isVisible(".App-logo"), true);
+        assert.equal($(".App-logo").isDisplayed(), true);
     });
 
     it('should show the correct initial conversion message', () => {
         browser.url('/');
 
-        const actualMessage = browser.getText('.temperatureMesssage');
+        const actualMessage = $('.temperatureMesssage').getText();
         const expectedMessage = "Watiting for input...";
 
         assert.equal(actualMessage, expectedMessage);
@@ -28,9 +28,9 @@ describe('Temperature converter', () => {
     it('should show the correct conversion message after conversion', () => {
         browser.url('/');
 
-        browser.setValue('.scale-type-c', 0);
+        $('.scale-type-c').setValue("0");
 
-        const actualMessage = browser.getText('.temperatureMesssage');
+        const actualMessage = $('.temperatureMesssage').getText();
 
         assert.equal(actualMessage.includes("0 Celsius is 32 Farhenheit"), true);
     });
