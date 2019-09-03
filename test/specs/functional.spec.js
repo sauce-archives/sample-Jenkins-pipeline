@@ -28,7 +28,7 @@ describe('Temperature converter', () => {
     it('should show the correct conversion message after conversion', () => {
         browser.url('/');
 
-        $('.scale-type-c').setValue("0");
+        $('.scale-type-c').setValue("32");
 
         const actualMessage = $('.temperatureMesssage').getText();
 
