@@ -1,3 +1,5 @@
+const assert = require("assert");
+
 describe('App Messages', () => {
 
         it('should show the correct initial conversion message', () => {
