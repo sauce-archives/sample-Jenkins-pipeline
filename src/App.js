@@ -20,7 +20,7 @@ class TemperatureInput extends React.Component {
   }
 
   render() {
-    const temperature = this.props.temperature;
+    const temperature = this.prop.temperature;
     const scale = this.props.scale;
     const className = "scale-type-" + scale;
     return (
