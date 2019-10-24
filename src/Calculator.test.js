@@ -11,7 +11,7 @@ it('calculates Celsius correctly', () => {
   assert.equal(actualF, expectedF);
 });
 
-it('calculates Celsius correctly', () => {
+it('calculates Farhenheit correctly', () => {
   const calc = new TemperatureCalculations;
 
   const expectedC = 100
