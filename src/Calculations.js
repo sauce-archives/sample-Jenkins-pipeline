@@ -1,5 +1,5 @@
 class TemperatureCalculations {
- toCelsius(fahrenheit) {
+ toCelsius(celsius) {
   return (celsius * 9 / 5) + 32;
   }
   
