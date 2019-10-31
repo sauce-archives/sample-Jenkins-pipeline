@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-	    	echo sh(script: 'env|sort', returnStdout: true)
-                nodejs("11.9") { sh "npm install" }
+	    	sh "env | sort"
             }
         }
         stage('Run Unit Tests') {
