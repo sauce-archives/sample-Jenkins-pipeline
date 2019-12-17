@@ -37,7 +37,7 @@ class TemperatureMessage extends React.Component {
 
   render() {
     const celsius = this.props.celsius;
-    const fahrenheit = this.props.celsius;
+    const fahrenheit = this.props.fahrenheit;
     
     if (!celsius || !fahrenheit) {
       return (
