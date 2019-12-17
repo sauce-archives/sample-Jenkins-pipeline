@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                nodejs("11.9") { sh "npm install" }
+	    	sh "env | sort"
             }
         }
         stage('Run Unit Tests') {
