@@ -4,7 +4,7 @@ class TemperatureCalculations {
   }
   
  toFahrenheit(celsius) {
-    return (celsius * 9 / 5) + 32;
+  return (fahrenheit - 32) * 5 / 9;
   }
   
  tryConvert(temperature, convert) {
