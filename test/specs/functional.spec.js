@@ -35,3 +35,4 @@ describe('Temperature converter', () => {
         assert.equal(actualMessage.includes("0 Celsius is 32 Farhenheit"), true);
     });
 });
+
