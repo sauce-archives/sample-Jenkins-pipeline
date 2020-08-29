@@ -5,7 +5,7 @@ describe('Temperature converter', () => {
         browser.url('/');
         
         const actualTitle = $(".App-title").getText();
-        const expectedTitle = "Welcome to Celcius to Farhenheit Calculator!"
+        const expectedTitle = "Welcome tox to Farhenheit Calculator!"
 
         assert.equal(actualTitle, expectedTitle);
     });
